@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const ProductData = require('./productData.json');
 
-const port = 8080;
+const hostname = '0.0.0.0';
+const port = 3000;
 
 const app = express();
 
@@ -28,4 +29,4 @@ app.get("/singleproduct/:id", (req, res) => {
     }
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, hostname, () => console.log(`Listening on port ${port}`));
